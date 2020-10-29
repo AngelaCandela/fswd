@@ -1,90 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
 <body>
-    <form action="data-process.php">
+    <h1>Formulario de Registro</h1>
+    <form action="procesar-datos.php" method="POST">
         <fieldset>
             <legend>Información personal</legend>
-            <label for="nameInput">Nombre:</label>
-            <input type="text" id="nameInput" name="name" placeholder="Elon">
 
-            <label for="lastnameInput">Apellido:</label>
-            <input type="text" id="lastnameInput" name="lastname" placeholder="Musk">
+            <div>
+                <label for="nameInput">Nombre: </label>
+                <input type="text" id="nameInput" name="name" placeholder="Elon">
 
-            <br><br>
+                <label for="lastnameInput">Apellido: </label>
+                <input type="text" id="lastnameInput" name="lastname" placeholder="Musk">
+            </div>
 
-            <label for="ageInput">Edad:</label>
-            <input type="number" id="ageInput" name="age" value=40>
+            <br>
 
-            <br><br>
+            <div>
+                <label for="ageInput">Edad: </label>
+                <input type="number" id="ageInput" name="age" value=40>
+            </div>
 
-            <label for="emailInput">Email:</label>
-            <input type="email" id="emailInput" name="email" placeholder="nombre@email.com">
+            <br>
 
-            <br><br>
+            <div>
+                <label for="emailInput">Email: </label>
+                <input type="email" id="emailInput" name="email" placeholder="nombre@email.com">
+            </div>
 
-            <label for="passwordInput">Password:</label>
-            <input type="password" id="passwordInput" name="password" placeholder="*******">
+            <br>
 
-            <br><br>
+            <div>
+                <label for="passwordInput">Password: </label>
+                <input type="password" id="passwordInput" name="password" placeholder="*******">
+            </div>
+
+            <br>
 
             <fieldset>
                 <legend>Género</legend>
-                <input type="radio" id="female" name="genre">
-                <label for="female">Mujer</label>
 
-                <br>
+                <div>
+                    <input type="radio" id="female" name="sex">
+                    <label for="female">Mujer</label>
+                </div>
 
-                <input type="radio" id="male" name="genre">
-                <label for="male">Hombre</label>
+                <div>
+                    <input type="radio" id="male" name="sex">
+                    <label for="male">Hombre</label>
+                </div>
 
-                <br>
-
-                <input type="radio" id="other" name="genre">
-                <label for="other">Otro</label>
+                <div>
+                    <input type="radio" id="other" name="sex">
+                    <label for="other">Otro</label>
+                </div>
             </fieldset>
 
             <br>
 
-            <label for="countryInput">País</label>
-            <input list="countryList" id="countryInput" name="country" placeholder="Introduce tu país">
-            <datalist id="countryList">
-                <option value="Italy"></option>
-                <option value="Spain"></option>
-                <option value="Germany"></option>
-                <option value="UK"></option>
-                <option value="France"></option>
-            </datalist>
+            <div>
+                <label for="countryInput">País</label>
+                <input list="countryList" id="countryInput" name="country" placeholder="Introduce tu país">
 
-            <br><br>
+                <datalist id="countryList">
+                    <option value="Italia">Italia</option>
+                    <option value="España">España</option>
+                    <option value="Alemania">Alemania</option>
+                    <option value="UK">Reino Unido</option>
+                    <option value="Francia">Francia</option>
+                </datalist>
+            </div>
 
-            <label for="codeInput">Lenguaje de programación:</label>
-            <select id="codeInput" name="codeInput">
-                <option value="Javascript">Javascript</option>
-                <option value="CSS">CSS</option>
-                <option value="Python">Python</option>
-                <option value="C++">C++</option>
-            </select>
+            <br>
 
-            <br><br>
+            <div>
+                <label for="codeInput">Lenguaje de programación:</label>
+                <select id="codeInput" name="codeInput">
+                    <option value="Javascript">Javascript</option>
+                    <option value="CSS">CSS</option>
+                    <option value="Python">Python</option>
+                    <option value="C++">C++</option>
+                </select>
+            </div>
+
+            <br>
 
             <fieldset disabled>
                 <legend>Selecciona tu academia de programación favorita:</legend>
-                <input type="radio" id="codeSpaceAcademy" name="academy" checked>
-                <label for="codeSpaceAcademy">Code Space Academy</label>
-                <br>
-                <input type="radio" id="academia2" name="academy">
-                <label for="academia2">Academia 2</label>
-                <br>
-                <input type="radio" id="academia3" name="academy">
-                <label for="academia3">Academia 3</label>
-            </fieldset>
 
+                <div>
+                    <input type="radio" id="codeSpaceAcademy" name="academy" checked>
+                    <label for="codeSpaceAcademy">Code Space Academy</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="academy2" name="academy">
+                    <label for="academy2">Academia 2</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="academy3" name="academy">
+                    <label for="academy3">Academia 3</label>
+                </div>
+            </fieldset>
         </fieldset>
 
         <br>
-        <input type="checkbox" id="newsletterSubscription">
-        <label for="newsletterSubscription">Acepto recibir cientos de miles de correos irrelevantes.</label><br>
-        <input type="checkbox" id="T&Cs">
-        <label for="T&Cs">Acepto los términos y condiciones.</label>
+
+        <div>
+            <input type="checkbox" id="newsletterSubscription">
+            <label for="newsletterSubscription">Acepto recibir cientos de miles de correos irrelevantes.</label><br>
+        </div>
+        <div>
+            <input type="checkbox" id="T&Cs">
+            <label for="T&Cs">Acepto los términos y condiciones.</label>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Vaciar formulario">
+        </div>
     </form>
-    <input type="submit" value="Enviar">
-    <input type="reset" value="Vaciar formulario">
 </body>
+
+</html>
