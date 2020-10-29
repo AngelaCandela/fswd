@@ -39,7 +39,6 @@
 
                 <input type="radio" id="other" name="genre">
                 <label for="other">Otro</label>
-
             </fieldset>
 
             <br>
@@ -62,27 +61,30 @@
                 <option value="CSS">CSS</option>
                 <option value="Python">Python</option>
                 <option value="C++">C++</option>
+            </select>
 
             <br><br>
 
-            <fieldset>
+            <fieldset disabled>
                 <legend>Selecciona tu academia de programación favorita:</legend>
-                <input type="radio" id="codeSpaceAcademy" name="academy">
+                <input type="radio" id="codeSpaceAcademy" name="academy" checked>
                 <label for="codeSpaceAcademy">Code Space Academy</label>
-
                 <br>
-
                 <input type="radio" id="academia2" name="academy">
                 <label for="academia2">Academia 2</label>
-
                 <br>
-
                 <input type="radio" id="academia3" name="academy">
                 <label for="academia3">Academia 3</label>
             </fieldset>
 
-            
-
         </fieldset>
+
+        <br>
+        <input type="checkbox" id="newsletterSubscription">
+        <label for="newsletterSubscription">Acepto recibir cientos de miles de correos irrelevantes.</label><br>
+        <input type="checkbox" id="T&Cs">
+        <label for="T&Cs">Acepto los términos y condiciones.</label>
     </form>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Vaciar formulario">
 </body>
