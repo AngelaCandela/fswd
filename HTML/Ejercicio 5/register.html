@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5_register</title>
+</head>
+
+<body>
+    <header>
+        <img src="Imagenes/Adidas.png" width="200px" alt="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Iniciar sesión</a>
+            <a href="register.html">Registrarse</a>
+        </nav>
+    </header>
+    <br>
+    <form action="procesar-datos.php">
+        <div>
+            <label for="userName">Nombre:</label>
+            <input type="text" name="name" id="userName">
+        </div>
+        <br>
+        <div>
+            <label for="userLastName">Apellidos:</label>
+            <input type="text" name="lastname" id="userLastName">
+        </div>
+        <br>
+        <div>
+            <label for="userPhone">Teléfono:</label>
+            <input type="text" name="phone" id="userPhone">
+        </div>
+        <br>
+        <div>
+            <label for="userEmail">Email:*</label>
+            <input type="email" id="userEmail" name="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="userPassword">Contraseña:*</label>
+            <input type="password" id="userPassword" name="password" required>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Crear cuenta">
+        </div>
+    </form>
+</body>
+
+</html>
