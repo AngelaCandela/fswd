@@ -1,0 +1,18 @@
+.grey-box {
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: lightgray;
+    border: 1px solid grey;      
+}
+
+.right {    
+    float: right;    
+}
+
+a {
+    text-decoration: none;
+    color: #333333
+}
