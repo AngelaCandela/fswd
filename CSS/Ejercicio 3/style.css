@@ -2,15 +2,18 @@
 ul {
     border: 1px solid grey;
     width: 50%;
+    padding: 0%;   
 }
+
 li {
     list-style-image: url(/Images/two-arrows-fast-forward.png);    
-    list-style-position: inside;
+    
     background-color: rgba(192, 192, 192, 0.5);    
     border-bottom: 1px solid grey;
     
     margin: auto;
-    padding: 5px 15px;
+    padding: 5px 15px;    
+    list-style-position: inside;
 }
 
 li:hover {
