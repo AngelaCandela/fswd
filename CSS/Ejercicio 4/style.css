@@ -22,12 +22,13 @@ header form {
 
 .box-left {
     margin-top: 10px; 
-    margin-right: 10px;   
+    margin-right: 10px; 
+    margin-bottom: 10px;  
     width: 25%;    
     border: 2px solid grey;
     padding: 10px;
     float: left;
-    box-sizing: border-box;   
+    box-sizing: border-box;      
 }
 
 .box-left p {
@@ -39,20 +40,50 @@ header form {
 }
 
 .box-centre {
-    margin-top: 10px;    
+    margin-top: 10px;         
     width: 73%;    
     border: 2px solid grey;
     float: right; 
     box-sizing: border-box;    
 }
 
+.box-left p, .box-left h3 {    
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.publicidad h3 {
+margin-top: 30px;
+}
+
+.box-centre p, .box-centre h1 {    
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
 .box-centre-left{        
     width: 70%;
     margin-right: 10px;    
     border: 2px solid grey;
-    padding: 10px;
+    padding: 3%;
     float: left; 
     box-sizing: border-box;
+}
+
+.box-centre-left img {
+    width: 20%;
+    float: left;
+    margin-top: 10px;    
+}
+
+.box-centre-left p {
+    width: 78%;
+    float: right;    
+}
+
+.box-centre-left a {
+    display: block;
+    clear: both;    
 }
 
 .box-centre-right {        
@@ -63,23 +94,15 @@ header form {
     box-sizing: border-box; 
 }
 
-.image {
-height: 100px;
-width: 100px;
-background-color: grey;
-border: 1px solid black;
+footer {
+    width: 100%;
 }
 
-.box-centre-left p {
-    float: left;    
-}
-
-.box-footer {    
-    width: 100%;    
+.box-footer {
     border: 2px solid grey;
     box-sizing: border-box;
-    overflow: auto;
-    padding: 10px 20px;    
+    overflow: auto;    
+    clear: both;
 }
 
 footer p {
@@ -89,8 +112,3 @@ footer p {
 #copyright {
     float: right;
 }
-
-
-    
-}
-
