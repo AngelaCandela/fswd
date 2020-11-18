@@ -1,0 +1,43 @@
+.ejercicio {
+width: 80%;
+margin: auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+grid-auto-rows: minmax(100px, auto);
+gap: 10px;
+
+
+grid-template-areas:    "page-title page-title"
+                        "main-content masthead"
+                        "main-content masthead"
+                        "main-content sidebar"
+                        "footer-content footer-content";
+}
+
+.page-title {
+    background-color: lightskyblue;
+    grid-area: page-title;
+}
+
+.main-content {
+    background-color: cornflowerblue;
+    grid-area: main-content;
+    color: lightgray;
+}
+
+.masthead {
+    background-color: darkblue;
+    grid-area: masthead;
+    color: white;
+}
+
+.sidebar {
+    background-color: paleturquoise;
+    grid-area: sidebar;
+}
+
+.footer-content {
+    background-color: lightgoldenrodyellow;
+    grid-area: footer-content;
+}
