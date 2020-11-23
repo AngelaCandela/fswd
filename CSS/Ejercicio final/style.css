@@ -1,0 +1,349 @@
+body {
+    margin: 0%;
+    margin-left: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: grey;       
+}
+
+body > * {
+    padding-left: 10%; 
+    padding-right: 10%;
+}
+
+img {
+    width: 22px;
+}
+
+nav {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 40px;    
+    background-color: #1f2532;
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-logo {    
+    font-size: 2em;
+    color: white;    
+}
+
+.green_circle {
+    height: 12px;
+    width: 12px;
+    background-color: #7fe5b0;
+    border-radius: 50%;
+    position: relative;
+    bottom: 23px;
+    z-index: -1;       
+}
+
+[class^=nav-icon-] > img, [class^=nav-icon-]:hover {
+    width: 60%;    
+    padding: 25px 20% 0px 20%;    
+}
+
+.nav-icon-1:hover {
+    content: url(/icons/home_1.png);
+}
+
+.nav-icon-2:hover {
+    content: url(/icons/tag_1.png);
+}
+
+.nav-icon-3:hover {
+    content: url(/icons/image_1.png);
+}
+
+.nav-icon-4:hover {
+    content: url(/icons/down-arrow_1.png);
+}
+
+.nav-icon-5:hover {
+    content: url(/icons/app_1.png);
+}
+
+.nav-icon-6:hover {
+    content: url(/icons/bar-chart_1.png);
+}
+
+.control-panel {    
+    height: 18vh;  
+    box-sizing: border-box;    
+    background-color: #f8f9fb;
+    padding-top: 10px;   
+}
+
+.top-control-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-control-panel-left button, .top-control-panel-left input, .top-control-panel-right button {
+    border: none;
+    background-color: #f8f9fb;    
+}
+
+.top-control-panel-left button img {    
+    width: 18px;
+}
+
+h1 {
+    color: black;
+}
+
+.mid-control-panel-right button {
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #f8f9fb;
+    padding: 4px 10px;
+    margin-left: 15px;  
+}
+
+.mid-control-panel-right button img {    
+    width: 18px;
+    padding-left: 5px;
+    position: relative;
+    top: 2px;
+}
+
+.mid-control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-control-panel, .mid-control-panel, .bottom-control-panel {
+    height: 33.3%;
+    box-sizing: border-box;
+}
+
+.bottom-control-panel {
+    display: flex;
+    justify-content: start;
+}
+
+ul {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.bottom-control-panel li, .small-nav-panel li {  
+    display: inline;
+    margin-right: 20px;           
+}
+
+li a {
+    text-decoration: none;
+    color: #505966;
+    padding: 10px 0px;
+}
+
+li a:hover {  
+    font-weight: bold;
+    color: black;   
+    border: none;
+    border-bottom: 3px solid #1caf63;    
+}
+
+.main-content-top, .main-content-bottom {
+    background-color: #ffffff;
+}
+
+.search-bar {
+    height: 8vh;
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;   
+}
+
+.search-bar select, .search-bar input {
+    border-radius: 2px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #ffffff;    
+    padding: 8px 10px;
+}
+
+.search-bar select {    
+    width: 20%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-bar input {
+    height: 38px;
+    width: 65%;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    height: 38px;
+    width: 5%;
+    box-sizing: border-box; 
+    border: none;
+    background-color: #ffffff;  
+}
+
+.search-bar .blue-box {
+    background-color: #1f2532;
+    border-radius: 3px;
+    border-color: transparent;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+}
+
+.light-blue-box {
+    display: inline-block;
+    padding: 5px 20px 5px 10px;
+    background-color: #e0e9ff;
+    color: #507ae0;
+    font-size: .8em;
+    border-radius: 3px;  
+}
+
+.red-x {
+    width: 16px;
+    position: relative;
+    right: 13px;
+    top: 4px;
+}
+
+.main-content-top {
+    height: 15vh;  
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-content-top li a {
+    font-size: .9em;
+}
+
+.checkbox label, .sort-button label {
+    font-size: .9em;
+}
+
+.main-content-bottom, .page-index {
+    width: 70%;
+}
+
+.main-content-bottom {
+    height: 58vh;
+}
+
+hr {
+    color: lightgray;
+    border-width: 0.5px;
+}
+
+.sort-settings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort-settings img {
+    width: 18px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+.sort-settings select {
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+}
+
+table {
+    width: 100%;
+}
+table * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;    
+    color: grey;
+    
+}
+table b {
+    color: black;
+}
+
+table .green-font {
+    color: #1caf63;
+}
+
+table .blue-font {
+    color: #507ae0;
+}
+
+table .red-font {
+    color: #f65858;
+}
+
+table .green-label, table .blue-label, table .grey-label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+table .green-label b {
+    background-color: #baf0d4;
+    color: #1caf63;
+    border-radius: 20px;
+    padding: 5px 10px;   
+}
+
+table .blue-label b {
+    background-color: #e0e9ff;
+    color: #507ae0;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+table .grey-label b {
+    background-color: lightgrey;
+    color: grey;
+    border-radius: 20px;
+    padding: 5px 10px;          
+}
+
+.page-box {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid grey;
+    color: black;
+    text-align: center;
+    padding-top: 2px; 
+    margin-right: 10px;   
+}
+
+.page-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-index b {
+    color: black;
+}
+.page-index img {
+    width: 20px;
+    padding: 0px 10px;
+}
+
