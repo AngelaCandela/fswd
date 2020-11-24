@@ -34,12 +34,12 @@ nav {
 }
 
 .green_circle {
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     background-color: #7fe5b0;
     border-radius: 50%;
     position: relative;
-    bottom: 23px;
+    bottom: 20px;
     z-index: -1;       
 }
 
@@ -49,27 +49,27 @@ nav {
 }
 
 .nav-icon-1:hover {
-    content: url(/icons/home_1.png);
+    content: url(icons/home_1.png);
 }
 
 .nav-icon-2:hover {
-    content: url(/icons/tag_1.png);
+    content: url(icons/tag_1.png);
 }
 
 .nav-icon-3:hover {
-    content: url(/icons/image_1.png);
+    content: url(icons/image_1.png);
 }
 
 .nav-icon-4:hover {
-    content: url(/icons/down-arrow_1.png);
+    content: url(icons/down-arrow_1.png);
 }
 
 .nav-icon-5:hover {
-    content: url(/icons/app_1.png);
+    content: url(icons/app_1.png);
 }
 
 .nav-icon-6:hover {
-    content: url(/icons/bar-chart_1.png);
+    content: url(icons/bar-chart_1.png);
 }
 
 .control-panel {    
