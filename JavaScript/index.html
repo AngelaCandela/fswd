@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet</title>
+</head>
+<body>
+    <a href="#" onclick="alert('Hey, soy un script inline');">Inline script</a>
+    <a href="#">Internal script</a>
+    <a href="#" id="external">External script</a>
+
+    <script>
+        // Escucha el evento click del segundo enlace, entonces, ejecuta la función hey.
+        function hey() {
+            alert("Hey");
+        };
+        document.getElementsByTagName("a")[1].addEventListener("click", hey);
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
