@@ -260,7 +260,20 @@ function myFunction (item, index) {
 
 selectedColors.forEach(myFunction);
 
-// El anterior forEach es equivalente al siguiente for:
+    // El anterior forEach es equivalente al siguiente for:
 for (let i = 0; i <= selectedColors.length - 1; i++) {
     console.log(`Elemento ${i} es: ${selectedColors[i]}`);
 }
+
+// for ... of
+for (let color of selectedColors) {
+    console.log(`FOR ... OF : ${color}`);
+}
+
+
+
+// ---------------- DOM -----------------
+console.log(document);
+console.log(document.URL);
+console.log(document.domain);
+console.log(document.title);
