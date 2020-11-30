@@ -127,6 +127,53 @@ const users = [
     }
 ];
 
+console.clear();
+// Constructores de objetos utilizando funciones
+// **** Hace falta entender las funciones primero.
+
+function Car(brand, color, weight, topSpeed) {
+    this.brand = brand;
+    this.color = color;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+
+    this.description = () => `Este ${this.brand} ${this.color} pesa` +
+    ` ${this.weight} y puede llegar a los ${topSpeed} kms/h.`
+}
+
+const miCoche = new Car("BMW", "red", 1800, 230);
+console.log(miCoche.description());
+
+const coche2 = new Car("Volvo", "blue", 2000, 180);
+console.log(coche2.description());
+
+console.log(miCoche, coche2);
+
+console.clear();
+// Iterar sobre todas las propiedades de un objeto
+for (let key in miCoche) {    
+    if (typeof key !== "function") {
+        console.log(key);
+    }
+}
+
+for (let key of Object.keys(miCoche)) {
+    console.log(key);
+}
+
+for (let key of Object.values(miCoche)) {
+    console.log(key);
+}
+
+for (let key in miCoche) {
+    console.log(key, miCoche[key]);  // si no sabemos el nombre de la key
+}
+
+// Comprobar si una propiedad está presente en un objeto
+if ("year" in miCoche) {
+    console.log("El coche tiene año especificado.");
+}
+
 // ------------------- Arrays --------------------
 
 let selectedColors = ["red", "blue"];
@@ -159,7 +206,6 @@ console.log(selectedColors.lastIndexOf("red"));
 selectedColors.sort();
 console.log(selectedColors);
 
-console.clear();
 // ------------------- Condicionales --------------------
 let datoLogico = true;
 
@@ -197,7 +243,7 @@ switch (option) {
         break;
 }
 
-console.clear();
+
 // ------------------- Funciones --------------------
 function suma(num1, num2) {
     return num1 + num2;
@@ -271,9 +317,86 @@ for (let color of selectedColors) {
 }
 
 
+// Break - rompe el bloque de código en el que esté
+let k = 0;
+let z = 0;
+
+labelBreakLoop: while (true) {
+    console.log("Outer loop: ", k);
+    k++;
+    z = 0;
+    while (true) {
+        console.log("Inner loop: ", z);
+        z++;
+        if (z === 10 && k === 2) {
+            break labelBreakLoop;
+
+        } else if (z === 10) {
+            break;
+        }
+    }
+}
+
+
+// Continue - hace que nos saltemos una iteración en concreto
+for (let i = 0; i < 5; i++) {
+    if (i ===3) {
+        continue;
+    }    
+    console.log("Using continue: ", i);
+}
+
+
 
 // ---------------- DOM -----------------
+// Aspectos básicos
 console.log(document);
 console.log(document.URL);
 console.log(document.domain);
 console.log(document.title);
+console.log(document.links);
+console.log(document.images);
+
+console.clear();
+
+// Selectores
+/* document.getElementById(id);
+document.getElementsByTagName(tag);
+document.getElementsByClassName(name);
+document.querySelector("tag.class#id"); */
+
+const contenedores = document.getElementsByTagName("div");
+let grandparent = contenedores[0];
+grandparent = contenedores["grandparent"];
+grandparent = contenedores.grandparent;
+
+const parents = document.getElementsByClassName("parent");
+let parent1 = parents[0];
+parent1 = parents["parent1"];
+parent1 = parents.parent1;
+
+const child1 = document.getElementById("child1");
+
+const child2 = document.querySelector("div#grandparent.grandparent>.parent#parent1>#child2");
+const children = document.querySelectorAll(".child");
+
+/* parentElement
+firstElementChild
+lastElementChild
+nextElementSibling
+previousElementSibling */
+
+console.log(child1.textContent);
+console.log(child1.innerHTML);
+
+child1.innerHTML = ""; //Se carga todo el código dentro de ese contenedor div
+child1.innerHTML = "<span style='color:red;'>Child ONE</span>";
+child2.textContent =+ "!";
+
+// Creación de elementos
+
+
+
+
+
+

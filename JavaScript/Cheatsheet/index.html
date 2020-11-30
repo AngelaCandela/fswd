@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheatsheet</title>
+    <style>
+        a {
+            display: block;
+            font-size: 2em;
+        }
+        #grandparent, #grandparent div {
+            padding: 25px;
+            border: 5px solid black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-grow: 1;
+        }
+        #grandparent {background-color: brown;}
+        .parent {background-color: darkcyan;}
+        .child {background-color: khaki;}
+    </style>
 </head>
 <body>
     <a href="#" onclick="alert('Hey, soy un script inline');">Inline script</a>
     <a href="#">Internal script</a>
     <a href="#" id="external">External script</a>
+
+    <h1>Acceso al DOM</h1>
+    <div class="grandparent" id="grandparent">
+        <div class="parent" id="parent1">
+            <div class="child" id="child1">Child 1</div>
+            <div class="child" id="child2">Child 2</div>
+        </div>
+        <div class="parent" id="parent2">
+            <div class="child" id="child3">Child 3</div>
+            <div class="child" id="child4">Child 4</div>
+        </div>
+    </div>
 
     <script>
         // Escucha el evento click del segundo enlace, entonces, ejecuta la función hey.
