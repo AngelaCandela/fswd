@@ -367,7 +367,7 @@ document.querySelector("tag.class#id"); */
 
 const contenedores = document.getElementsByTagName("div");
 let grandparent = contenedores[0];
-grandparent = contenedores["grandparent"];
+grandparent = contenedores["grandparent"]; // Sólo si grandparent tiene ID
 grandparent = contenedores.grandparent;
 
 const parents = document.getElementsByClassName("parent");
@@ -391,11 +391,66 @@ console.log(child1.innerHTML);
 
 child1.innerHTML = ""; //Se carga todo el código dentro de ese contenedor div
 child1.innerHTML = "<span style='color:red;'>Child ONE</span>";
-child2.textContent =+ "!";
+child2.textContent += "!";
 
 // Creación de elementos
+let newDiv = document.createElement("div");
+newDiv.id = "identificador"
+newDiv.setAttribute("title", "divTitle"); // Cuando la propiedad que queramos configurar no esté disponible
+newDiv.title = "divTitle";
+newDiv.textContent = "Child 2.5";
+newDiv.innerText = "Child 2.5"; /* Similar a textContent pero respeta estilos,
+                        p.e. con estilo display:none no lo mostraría */
+
+// Modificación de CSS - no recomendado, el código CSS siempre en el archivo CSS
+newDiv.style.backgroundColor = "red";
+newDiv.style.border = "2px solid black";
+newDiv.style.cssText = "background-color: red; color: white;";
+
+newDiv.className = "btn btn-primary";
+newDiv.className += " newClass";
+
+// Modificación de CSS - Forma recomendada/buena práctica (a través de las clases)
+newDiv.classList.add("otherClass");
+newDiv.classList.remove("newClass");
+
+newDiv.classList.toggle("newClass"); // toggle: si la clase está la quita
+newDiv.classList.toggle("newClass"); // y si no está la pone (útil para las animaciones)
+
+// Anexarlo en los hijos
+parent1.appendChild(newDiv);
+parent1.appendChild(newDiv); /* Sobreescribiría al primero, no pueden
+                        coexistir dos instancias del mismo nodo. */
 
 
+const otherDiv = newDiv.cloneNode(true);
+otherDiv.id = "otherID"; // lo acabamos de clonar pero es importante cambiarle el ID
+otherDiv.textContent = "Other Div";
+parent1.prepend(otherDiv);
+parent1.insertBefore(otherDiv, child2);
+
+// Anexarlo al mismo nivel
+parent1.after(otherDiv);
+parent1.before(otherDiv);
+
+// Eliminar nodes / elementos
+otherDiv.remove();
+parent1.removeChild(newDiv);
+
+// Eventos
+const miBoton = document.querySelector("button")
+miBoton.addEventListener("click", buttonClick);
+
+function buttonClick(event) {
+    miBoton.textContent = "Nuevo texto";
+}
+
+/* document.getElementById(id).onclick = function (){
+    //nuestro código
+}
+
+element.addEventListener(evento, function);
+ */
 
 
 
