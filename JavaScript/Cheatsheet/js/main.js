@@ -449,8 +449,36 @@ function buttonClick(event) {
     //nuestro código
 }
 
-element.addEventListener(evento, function);
+element.addEventListener(event, function);
  */
+
+
+ const h2 = document.querySelector("h2");
+
+ document.body.addEventListener("mousemove", updateCoords);
+ function updateCoords(event) {
+    console.log(`Alt: ${event.altKey} || Ctrl: ${event.ctrlKey} || Shift: ${event.shiftKey}`);
+    h2.textContent = `Coordenadas: X:${event.x} Y:${event.y}`;
+ }
+
+ const input = document.querySelector("input");
+
+ input.addEventListener("focus", logEvent);
+ input.addEventListener("blur", logEvent);
+ input.addEventListener("keyup", logEvent);
+
+ function logEvent(event) {
+    console.log(event.type);
+    if (event.type === "focus") {
+        event.target.style.backgroundColor = "red";
+    } else if (event.type === "blur") {
+        event.target.style.backgroundColor = "white";
+    } else {
+        input.previousElementSibling.textContent = event.target.value;
+    }
+
+ }
+
 
 
 

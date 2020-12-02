@@ -3,6 +3,6 @@
     color: white;
 }
 
-li {
-    list-style: none;
+.red_border {
+    border: 2px solid red;
 }
