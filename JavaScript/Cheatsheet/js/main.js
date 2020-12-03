@@ -66,6 +66,19 @@ console.log(str.replace("Futuro", "Mundo"));
 
 console.log(`${name} tiene ${age} años.`);
 
+// Parsing - Cambio de tipo de dato
+let num3 = "1000.5";
+console.log(typeof num3, num3);
+console.log(typeof parseInt(num3), parseInt(num3));  // Convierte una string a integer
+console.log(typeof parseFloat(num3), parseFloat(num3)); // Convierte una string a float
+console.log(typeof Number(num3), Number(num3)); // Crea un número, respetando si es int o float
+
+console.log("1000" + 1000, typeof("1000" + 1000));
+console.log(1000 + + "1000", typeof(1000 + + "1000"));
+console.log(1000 + Number("1000"), typeof(1000 + Number("1000")));
+console.log("1000" * 1, typeof("1000" * 1));
+
+
 // ------------------- Objects --------------------
 console.clear();
 
@@ -192,9 +205,9 @@ selectedColors.unshift("pink");
 console.log(typeof selectedColors, selectedColors, selectedColors.length);
 
 //Eliminar elementos
-/* selectedColors.shift(); //Elimina el primer elemento de un array
+selectedColors.shift(); //Elimina el primer elemento de un array
 selectedColors.pop(); //Elimina el último elemento de un array
-selectedColors.splice(1, 2); // Elimina, a partir del indice que indiquemos, el número de elementos que indiquemos */
+selectedColors.splice(1, 2); // Elimina, a partir del indice que indiquemos, el número de elementos que indiquemos
 
 console.log(typeof selectedColors, selectedColors, selectedColors.length);
 
@@ -360,10 +373,10 @@ console.log(document.images);
 console.clear();
 
 // Selectores
-/* document.getElementById(id);
+document.getElementById(id);
 document.getElementsByTagName(tag);
 document.getElementsByClassName(name);
-document.querySelector("tag.class#id"); */
+document.querySelector("tag.class#id");
 
 const contenedores = document.getElementsByTagName("div");
 let grandparent = contenedores[0];
@@ -476,10 +489,4 @@ element.addEventListener(event, function);
     } else {
         input.previousElementSibling.textContent = event.target.value;
     }
-
  }
-
-
-
-
-
