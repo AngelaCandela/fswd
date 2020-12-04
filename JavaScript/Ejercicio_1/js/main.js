@@ -1,16 +1,17 @@
 // Apartado 1.
 const container = document.getElementById("container");
-const p1 = document.createElement("p")
-const p2 = document.createElement("p")
+const p1 = document.createElement("p");
+const p2 = document.createElement("p");
 p1.textContent = ("Text one.");
 p2.textContent = ("Text two.");
 container.appendChild(p1);
 container.appendChild(p2);
 
 // Apartado 2.
+const container_2 = document.getElementById("container_2");;
 const button = document.createElement("button");
-button.textContent = ("button");
-container.appendChild(button);
+button.textContent = ("Change Background Color");
+container_2.appendChild(button);
 
 button.addEventListener("click", backgroundColorChange);
 
@@ -36,7 +37,7 @@ function picChange (click) {
     }     
 } */
 
-//Apartado 3.2.
+//Apartado 3.
 const links = document.getElementsByTagName("span");
 const picture = document.getElementById("pic");
 
@@ -49,10 +50,10 @@ function picChange (click) {
 
 //Apartado 4.
 let input = document.getElementById("input");
-let button2 = document.getElementById("button_2");
+let button_2 = document.getElementById("button_2");
 let p3 = document.getElementById("paragraph");
 
-button2.addEventListener("click", addText);
+button_2.addEventListener("click", addText);
 
 function addText(click) {
     p3.textContent = input.value;
@@ -69,32 +70,32 @@ function addText2(keyup) {
 
 //Apartado 5.
 let textarea = document.getElementById("textarea");
-let button3 = document.getElementById("button_3");
+let button_3 = document.getElementById("button_3");
 let p4 = document.getElementById("paragraph_2");
 
-button3.addEventListener("click", checkLength);
+button_3.addEventListener("click", checkLength);
 function checkLength (click) {
     if (textarea.value.length < 15) {
-        p4.textContent = "Introduzca un mínimo de 15 carácteres.";
+        p4.textContent = "Please type 15 or more characters.";
     } else {
-        p4.textContent = "Bien hecho!";
+        p4.textContent = "That's it!";
     }
 }
 
 //Apartado 6.
 let input_3 = document.getElementById("input_3");
-let button4 = document.getElementById("button_4");
+let button_4 = document.getElementById("button_4");
 let p5 = document.getElementById("paragraph_3");
 
-button4.addEventListener("click", checkEven);
+button_4.addEventListener("click", checkEven);
 
 function checkEven(click) {
     input_3.classList.remove("red_border");
     if (input_3.value % 2 === 0) {
-        p5.textContent = "Bien hecho!"; 
+        p5.textContent = "That's it!"; 
         input_3.classList.remove("red_border");       
     } else {
-        p5.textContent = "Introduzca un número par.";
+        p5.textContent = "Please type an even number.";
         input_3.classList.add("red_border"); 
     }    
 }
@@ -107,13 +108,26 @@ function removeRedBorder(click) {
 
 //Apartado 7.
 const ul10 = document.createElement("ul");
-document.body.appendChild(ul10);
+const container_4 = document.getElementById("container_4");
+container_4.appendChild(ul10);
 
 for (let i = 1; i < 11; i++) {
     let li = document.createElement("li");
     li.textContent = `Elemento ${i}`;
     ul10.appendChild(li);
 }
+
+//Apartado 8.
+const link = document.getElementById("link");
+let button_5 = document.getElementById("button_5");
+
+button_5.addEventListener("click", newTab);
+
+function newTab(click) {
+    link.target = "_blank";
+}
+
+
 
 
 

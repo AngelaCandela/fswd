@@ -91,7 +91,7 @@ mySUV.getHP();
 
 
 console.log("------------------------ES6-----------------------");
-// Clases (Synctactic sugar)
+// Clases (Syntactic sugar)
 class Book {
     constructor(title, author, year) {
         this.title = title;
@@ -117,6 +117,7 @@ const book1 = new Book("Metamorphosis", "Franz Kafka", 1912);
 console.log(book1);
 book1.getSummary();
 
+//Setters y getters
 //Get
 const finalPrice = book1.price;
 console.log(finalPrice);
@@ -124,6 +125,27 @@ console.log(finalPrice);
 //Set
 book1.price = 121;
 console.log(book1.basePrice);
+
+class Person {
+    constructor(name, lastname) {
+        this.name = name;
+        this.lastname = lastname;
+    }
+
+    get fullName() {
+        return `${this.name} ${this.lastname}`;
+    }
+
+    set fullName(newName) {
+        this.name = newName.split(" ")[0];
+        this.lastname = newName.split(" ")[1];
+    }
+}
+
+const person1 = new Person("Roger", "Penrose");
+console.log(person1.fullName);
+person1.fullName = "Richard Dawkins";
+console.log(person1);
 
 class Magazine extends Book {
     constructor(title, author, year, month) {
@@ -133,8 +155,50 @@ class Magazine extends Book {
     getType () {
         console.log("Magazine");
     }
+
+    /* getSummary() {
+        console.log("otra cosa");
+    } */
 }
 
 const mag1 = new Magazine("Autopista", "Motorpress Ibérica", 2017, "July");
 console.log(mag1);
+
 mag1.getSummary();
+/* Magazine.getSummary();  *///da error, porque al no ser un método estático
+//no se le puede llamar desde la clase (plantilla), sino sólo desde las instancias.
+
+//Métodos estáticos - no implican nada sobre las instancias
+//(porque en ellos no está presente ningún "this."") y por eso se les puede llamar
+//directamente desde la clase (plantilla).
+
+//Polimorfismo
+class Animal {
+    constructor() {
+        this.sound = "Generic sound";
+    }
+
+    makeSound() {
+        console.log(this.sound);
+    }
+}
+
+class Dog extends Animal {
+    constructor() {
+        super();
+        this.sound = "Guau";
+    }
+}
+
+class Cat extends Animal {
+    constructor() {
+        super();
+        this.sound = "Miau";
+    }
+}
+
+const dog = new Dog();
+dog.makeSound();
+
+const cat = new Cat();
+cat.makeSound();

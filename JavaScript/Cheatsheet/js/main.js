@@ -373,10 +373,10 @@ console.log(document.images);
 console.clear();
 
 // Selectores
-document.getElementById(id);
+/* document.getElementById(id);
 document.getElementsByTagName(tag);
 document.getElementsByClassName(name);
-document.querySelector("tag.class#id");
+document.querySelector("tag.class#id"); */
 
 const contenedores = document.getElementsByTagName("div");
 let grandparent = contenedores[0];
@@ -490,3 +490,121 @@ element.addEventListener(event, function);
         input.previousElementSibling.textContent = event.target.value;
     }
  }
+
+
+// Aspectos más avanzados - Higher order functions
+// Map
+
+/* for(let i = 0; i < array1.length; i++) {
+    array2.push(array1[i] * 2);
+}
+
+console.log("Array2:", array2); */
+
+ let array1 = [1, 2, 3];
+ console.log("Array1:", array1);
+ let array2 = [];
+
+ 
+ array2 = array1.map(function (value, index) {
+    return value * 2;
+ });
+
+/*  array2 = array1.map(value => value * 2); */
+
+ console.log("Array2:", array2);
+
+ console.clear();
+/* 
+ const BirthYear = [];
+ for(let i = 1960; i < 2021; i++) {
+    BirthYear.push(i);
+ }
+
+ console.log(BirthYear); */
+
+ let thisYear = new Date().getFullYear();
+ let birthdays = [1995, 1990, 1957, 1982, 2010];
+ let ages = [];
+
+ ages = birthdays.map(function (value, index) {
+    return thisYear - value;
+});
+
+console.log(ages);
+
+// Filter -funciona con cualquier cosa que devuelva un Booleano (verdadero o falso)
+const prices = [150, 50, 49, 51, 15, 237];
+let expensivePrices = [];
+
+for (let price of prices) {
+    if (price >= 50) {
+        expensivePrices.push(price);
+    }
+}
+
+console.log("Forma convencional: ", expensivePrices);
+
+expensivePrices = prices.filter(function (price) {
+    return (price >= 50);
+});
+
+expensivePrices = prices.filter(price => price >= 50);
+console.log(expensivePrices);
+
+const people = [
+    {name: "Juan", age: 21,},
+    {name: "Fran", age: 7,},
+    {name: "Sofía", age: 39,},
+    {name: "Miriam", age: 18,},
+]
+console.log(people);
+
+const adults = people.filter(person => person.age >= 18);
+console.log(adults);
+
+const adultsNames = adults.map(adult => adult.name);
+console.log(adultsNames);
+
+// Reduce
+
+/* const arr1 = [10, 7, 13, 20];
+let suma = 0;
+
+for (let num of arr1) {
+    suma = suma + num;
+}
+
+console.log(suma); */
+
+const arr1 = [10, 7, 13, 20];
+const sumaAcumulada = arr1.reduce((sumaAcumulada, number) => sumaAcumulada + number, 0);
+console.log(sumaAcumulada);
+
+// Sort
+
+/* arr1.sort(function (a, b) {
+    if (a > b) {
+        return 1;
+    } else if (a < b) {
+        return -1;
+    } else {
+        return 0;
+    }
+});
+
+arr1.sort(function (a, b) {
+    return a - b;
+});
+
+arr1.sort((a, b) => a  - b);
+console.log(arr1); */
+
+console.log(people);
+
+people.sort((person1, person2) => person1.age - person2.age);
+
+console.log(people);
+
+spread operator
+destructuring
