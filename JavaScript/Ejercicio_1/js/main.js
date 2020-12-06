@@ -127,8 +127,70 @@ function newTab(click) {
     link.target = "_blank";
 }
 
+//Apartado 9.
+let p6 = document.getElementById("paragraph_4");
+let select = document.getElementById("select");
+let options = Array.from(select);
 
+options.forEach(option => option.addEventListener("click", p6colorChange));
 
+function p6colorChange(click) {
+    p6.style.color = click.target.value;
+}
 
+//Apartado 10.
+let button_6 = document.getElementById("button_6");
+button_6.addEventListener("click", randomNumber);
+let p7 = document.getElementById("paragraph_5");
+let p8 = document.getElementById("paragraph_6");
+let p9 = document.getElementById("paragraph_7");
+let p10 = document.getElementById("paragraph_8");
 
+let listOfGeneratedNumbers = [];
+let listOfEvenNumbers = [];
+let listOfOddNumbers = [];
+let numberCount = 0;
 
+function randomNumber(click) {
+    let num = Math.round(Math.random() * 100);
+    console.log(num);
+    numberCount += 1;
+    listOfGeneratedNumbers.push(num);
+    if (num % 2 == 0) {
+        listOfEvenNumbers.push(num); 
+    } else {
+        listOfOddNumbers.push(num);
+    }
+    p7.textContent = `You have generated the following random numbers: ${listOfGeneratedNumbers}.`;
+    p8.textContent = `Of which the following are even numbers: ${listOfEvenNumbers}.`;
+    p9.textContent = `And the following are odd numbers: ${listOfOddNumbers}.`;
+    p10.textContent = `In total you have generated ${numberCount} random numbers.`;
+}
+
+//Apartado 11.
+let input_4 = document.getElementById("input_4");
+let button_7 = document.getElementById("button_7");
+let ol = document.getElementById("ol");
+let list = Array.from(ol);
+
+button_7.addEventListener("click", inArray);
+
+function inArray(click) {
+    let num = input_4.value;
+    let alreadyExists = false;
+    for (let i = 0; i < list.length; i++) {
+        if(list[i] == num) {            
+            alert("This number is already in the list. Please type a different number.")
+            alreadyExists = true;
+            break;
+        }        
+    }
+
+    if(alreadyExists == false) {
+        list.push(num);
+        let newLi = document.createElement("li");
+        ol.appendChild(newLi);
+        newLi.textContent = num;
+        console.log(ol);
+    }
+}
