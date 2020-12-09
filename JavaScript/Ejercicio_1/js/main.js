@@ -2,8 +2,8 @@
 const container = document.getElementById("container");
 const p1 = document.createElement("p");
 const p2 = document.createElement("p");
-p1.textContent = ("Text one.");
-p2.textContent = ("Text two.");
+p1.textContent = ("I am the first paragraph.");
+p2.textContent = ("I am the second paragraph.");
 container.appendChild(p1);
 container.appendChild(p2);
 
@@ -193,4 +193,12 @@ function inArray(click) {
         newLi.textContent = num;
         console.log(ol);
     }
+}
+
+//Apartado 12.
+let button_8 = document.getElementById("button_8");
+button_8.addEventListener("click", changeButtonStyle);
+
+function changeButtonStyle(click) {
+    button_8.classList.toggle("btn");
 }
