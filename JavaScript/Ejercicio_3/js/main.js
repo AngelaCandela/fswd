@@ -14,45 +14,56 @@ const book3 = new Book (3, "La nueva mente del emperador", "Roger Penrose", 1200
 const book4 = new Book (4, "Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 910120, 16);
 const book5 = new Book (5, "The Selfish Gene", "Richard Dawkins", 740120, 12);
 
+// Filling the array with all the books
 const books = [book1, book2, book3, book4, book5];
-const cells = document.querySelectorAll("td");
 
-function rowFill() {
-    let counter = 0;
-    for(i = 0; i < books.length; i++) {
-        for(let key in books[i]) {
-            cells[counter].textContent = `${books[i][key]}`;
-            counter += 1;                       
-        }  
+// Defining and initialising variables/constants
+const table = document.getElementById("table");
+const tableHead = document.getElementById("tableHead");
+const tableBody = document.getElementById("tableBody");
+const btn_removable = document.getElementById("removable");
+let counter = 0;
+
+//Generic function to fill in a table starting from an array of objects
+function tableFill(table, list) {
+    for(const obj of list) {
+        const newRow = document.createElement("tr");
+        table.appendChild(newRow);
+        for(const property in obj) {
+            let newCell = document.createElement("td");
+            newRow.appendChild(newCell);
+            newCell.textContent = obj[property];
+        }
     }
 }
 
-rowFill();
-const btn_removable = document.getElementById("removable");
+tableFill(tableBody, books);
+
+// Adding event listener to the green 'Removable' button
 btn_removable.addEventListener("click", addButton);
 
-const rows = document.querySelectorAll("tr");
-let counter_2 = 0;
-
+//Function to make the 'Remove' buttons appear ONLY ONCE
 function addButton() {
-    
-    for (i = 0; i < rows.length; i++) {
-        if(i == 0) {  
-            const newHeaderCell = document.createElement("th");          
-            rows[i].append(newHeaderCell);
-            newHeaderCell.textContent = "Remove";          
-        } else {  
-            const buttonCell = document.createElement("button");          
-            rows[i].append(buttonCell);
+    if(counter == 0) {
+        const newHeaderCell = document.createElement("th");
+        tableHead.firstElementChild.appendChild(newHeaderCell);
+        newHeaderCell.textContent = "Remove";
+
+        const rows = Array.from(tableBody.children);
+        for(row of rows) {
+            const buttonCell = document.createElement("button");
+            row.appendChild(buttonCell); 
             buttonCell.textContent = "Remove";
             buttonCell.classList.add("btn", "btn-danger");
 
+            // Adding event listener to the red 'Remove' buttons
             buttonCell.addEventListener("click", removeRow);
-
+            //Function to remove the entire row
             function removeRow(click) {
                 click.target.parentElement.classList.add("displayNone");
             }
-        }   
-    }    
-    counter_2 += 1;
+        }
+    }
+    counter += 1;    
 }
+

@@ -12,64 +12,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Books</h1>
-  <button id="removable" class="btn btn-success">Removable</button>
-
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Sales</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Scripts -->
-  <script src="../js/jquery-3.5.1.slim.min.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <div class="container">
+    <h1 class="my-4">Books</h1>
+    <button id="removable" class="btn btn-success mb-4">Removable</button>
+  </div>
+  <div class="container">
+    <table id="table my-4" class="table">
+      <thead id="tableHead"class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Sales</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
 
   <script src="js/main.js"></script>
-  <!-- Fin scripts -->
 </body>
 </html>
