@@ -52,7 +52,7 @@ function addButton() {
         const rows = Array.from(tableBody.children);
         for(row of rows) {
             const buttonCell = document.createElement("button");
-            row.appendChild(buttonCell); 
+            row.appendChild(buttonCell);
             buttonCell.textContent = "Remove";
             buttonCell.classList.add("btn", "btn-danger");
 
@@ -60,7 +60,7 @@ function addButton() {
             buttonCell.addEventListener("click", removeRow);
             //Function to remove the entire row
             function removeRow(click) {
-                click.target.parentElement.classList.add("displayNone");
+                click.target.parentElement.classList.add("d-none");
             }
         }
     }
