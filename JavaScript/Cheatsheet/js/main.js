@@ -470,7 +470,6 @@ element.addEventListener(event, function);
 
  document.body.addEventListener("mousemove", updateCoords);
  function updateCoords(event) {
-    console.log(`Alt: ${event.altKey} || Ctrl: ${event.ctrlKey} || Shift: ${event.shiftKey}`);
     h2.textContent = `Coordenadas: X:${event.x} Y:${event.y}`;
  }
 
@@ -606,5 +605,80 @@ people.sort((person1, person2) => person1.age - person2.age);
 
 console.log(people);
 
-spread operator
-destructuring
+// spread operator
+// destructuring
+console.clear();
+// ---------------- Fetch API -------------
+// Interna a un archivo
+const DATA_PATH = "data/users.json";
+
+fetch(DATA_PATH)
+    .then(response => {
+        if(!response.ok)
+            throw new Error(`Ha ido algo mal: ${response.statusText}`);
+        
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => alert("Ha ido algo mal"))
+
+console.log("Más código mío");
+
+// Externa
+const USERS_URL = "https://reqres.in/api/users";
+
+fetch(USERS_URL)
+    .then(response => {
+        if(!response.ok)
+            throw new Error(response.status);
+        
+        return response.json();
+    })
+    .then(json => console.log(json.data.map(user => user.email)))
+    .catch(error => console.log(error))
+
+    // GET - obtener algo
+    // POST - enviar algo
+    // PUT - reemplazar algo que ya existe
+    // PATCH - realizar modificaciones parciales
+
+// Método POST
+const LOGIN_URL = "https://reqres.in/api/login";
+
+const credentials = {
+    email: "eve.holt@reqres.in",
+    password: "cityslicka"
+    }
+
+fetch(LOGIN_URL, {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(credentials)
+    })
+    .then(response => {
+        if(!response.ok)
+            throw new Error(`Algo ha ido mal: ${response.statusText}`);
+        
+        return response.json();
+    })
+    .then(json => console.log(json.data.map(user => user.email)))
+    .catch(error => console.log(error))
+
+    // Paginación
+    const apiBooks = [
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+        "Book",
+    ];
+    console.log(apiBooks);
