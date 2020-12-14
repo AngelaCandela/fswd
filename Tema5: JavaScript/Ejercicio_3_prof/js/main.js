@@ -41,7 +41,7 @@ class Table {
             const bookID = e.target.parentNode.parentNode.firstChild.textContent;
             this.dataArray = this.dataArray.filter(item => item.id != bookID);
             this.update();
-        })
+        });
 
         const lastCell = document.createElement("td");
         lastCell.appendChild(newButton);
