@@ -664,21 +664,23 @@ fetch(LOGIN_URL, {
         return response.json();
     })
     .then(json => console.log(json.data.map(user => user.email)))
-    .catch(error => console.log(error))
+    .catch(error => console.log(error));
 
-    // Paginación
-    const apiBooks = [
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-        "Book",
-    ];
-    console.log(apiBooks);
+// Paginación
+const apiBooks = [
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+    "Book",
+];
+console.log(apiBooks);
+
+    
