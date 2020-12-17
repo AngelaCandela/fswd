@@ -24,3 +24,22 @@ function Card(props) {
 }
 
 export default App;
+
+function PrimerComponente() {
+  const personas = [
+    {nombre: "Antonio", apellidos: "López Muñoz"},
+    {nombre: "Agustín", apellidos: "Altamira Ramírez"}
+  ];
+  return (
+    personas.map(persona => {
+      return (
+        <div>
+          <ul>
+            <li key={persona.nombre}>{persona.nombre}</li>
+            <li key={persona.apellidos}>{persona.apellidos}</li>
+          </ul>
+        </div>
+      )
+    })
+  )
+}

@@ -1,6 +1,6 @@
 function Post(props) {
 
-    const defaultTitle = "Sin título"
+  const defaultTitle = "Sin título"
   return (
     <>{ props.title ? (<h1>{props.title}</h1>) : (<h1>{defaultTitle}</h1>)
     }      
