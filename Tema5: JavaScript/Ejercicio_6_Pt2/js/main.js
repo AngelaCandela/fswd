@@ -2,8 +2,8 @@ const LOGIN_URL = "https://reqres.in/api/login";
 const USERS_URL = "https://reqres.in/api/users";
 
 const credentials = {
-    email: "eve.holt@reqres.in",
-    password: "cityslicka"
+    email: "",
+    password: ""
 }
 
 const PAGE_SIZE = 6;
@@ -13,6 +13,8 @@ let users = [];
 const div = document.querySelector("#my-div");
 document.querySelector("#previousPage").addEventListener("click", changePage);
 document.querySelector("#nextPage").addEventListener("click", changePage);
+const emailInput = document.querySelector("#email");
+const passwordInput = document.querySelector("#password");
 document.querySelector("#sendCredentials").addEventListener("click", checkCredentials);
 
 function changePage(e) {
@@ -48,6 +50,10 @@ function createPage() {
 }
 
 function checkCredentials() {
+
+    credentials.email = emailInput.value;
+    credentials.password = passwordInput.value;
+
     fetch(LOGIN_URL, {
         method: "POST",
         headers: {
@@ -61,12 +67,12 @@ function checkCredentials() {
         
         return response.json();
     })
-    .then(getAllUsers(USERS_URL))
+    .then(getAllUsers)
     .catch(error => console.log(error))
 };
 
-function getAllUsers(URL) {
-    fetch(URL)
+function getAllUsers(USERS_URL) {
+    fetch(USERS_URL)
         .then(response => {
             if(!response.ok)
                 throw new Error(`Algo ha ido mal: ${response.statusText}`);
@@ -77,7 +83,7 @@ function getAllUsers(URL) {
             users = users.concat(json.data);
 
             if(json.page < json.total_pages) {
-                getAllUsers(`${URL}?page=${json.page+1}`);
+                getAllUsers(`${USERS_URL}?page=${json.page+1}`);
             }
             createPage();
         }).catch(error => console.log(error));

@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Ejercicio 6 - Parte 2</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form action="#">
-        <label for="email">Email:</label>
-        <input type="text" id="email">
-        <label for="password">Password:</label>
-        <input type="password" id="password">
-        <button type="submit" id="sendCredentials">Login</button>
-    </form>
-    <div id="my-div"></div>
-    <button id="previousPage">Previous</button>
-    <button id="nextPage">Next</button>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="#">
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <button type="submit" id="sendCredentials" class="my-4 btn btn-primary">Login</button>
+        </form>
+        <div id="my-div"></div>
+        <button id="previousPage" class="my-4 btn btn-outline-primary">Previous</button>
+        <button id="nextPage" class="my-4 btn btn-outline-primary">Next</button>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
