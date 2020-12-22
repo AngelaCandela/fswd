@@ -9,32 +9,59 @@ export default function Formulario({ setContacts }) {
     const [postcode, setPostcode] = useState("");
     const [phone, setPhone] = useState("");
 
-    const handleName= (event) => {
+    const handleName = (event) => {
         setName(event.target.value);
     }
 
-    const handleLastName= (event) => {
+    const handleLastName = (event) => {
         setLastName(event.target.value);
     }
 
-    const handleAddress= (event) => {
+    const handleAddress = (event) => {
         setAddress(event.target.value);
     }
 
-    const handleProvince= (event) => {
+    const handleProvince = (event) => {
         setProvince(event.target.value);
     }
 
-    const handlePostcode= (event) => {
+    const handlePostcode = (event) => {
         setPostcode(event.target.value);
     }
 
-    const handlePhone= (event) => {
+    const handlePhone = (event) => {
         setPhone(event.target.value);
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const newContact = {
+            name: name,
+            lastName: lastName,
+            address: address,
+            province: province,
+            postcode: postcode,
+            phone: phone,
+        };
+        
+        setContacts(prevContacts => [...prevContacts, newContact]);
+
+    // La función setContacts (como cualquier función setXxx) siempre recibe como primer parámetro
+    // el estado prevContacts, es decir el último estado guardado.
+    // Gracias a eso, podemos utilizar el estado previo sin tener que pasárselo a Formulario
+    // arriba del todo, sino simplemente poniendolo en los paréntesis de nuestra función setContacts(prevContacts)
+
+        setName("");
+        setLastName("");
+        setAddress("");
+        setProvince("");
+        setPostcode("");
+        setPhone("");
+    }
+
     return (
-        <form className="form-group">
+        <form className="form-group" onSubmit={handleSubmit}>
             <h1>New contact</h1>
             <input type="text" className="form-control mb-3" placeholder="Name" value={name} onChange={handleName}></input>
             <input type="text" className="form-control mb-3" placeholder="Last Name" value={lastName} onChange={handleLastName}></input> 
