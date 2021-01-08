@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import './App.css';
 import Post from "./components/Post"
+import Router from "./Router"
 
 /* function App() {
   return (
@@ -61,7 +62,7 @@ function PrimerComponente() {
       <button onClick={() => setCount(count => count + 1)}>Click</button>
     </div>
   );
-}
+} */
 
 function Example() {
 
@@ -78,23 +79,12 @@ function Example() {
       Soy un componente que desaparece.
     </div>
   );
-} */
-import { BrowserRouter, Route} from "react-router-dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
+}
 
 function App() {
   return (
-    <div className="container">
-      <BrowserRouter>
-        <ul>
-          <li><Navlink to="/">Home</Navlink></li>
-          <li><Navlink to="/about">About</Navlink></li>
-        </ul>
-
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </BrowserRouter>
+    <div className="App">
+      <Router />
     </div>
   );
 }

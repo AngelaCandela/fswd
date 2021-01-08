@@ -13,7 +13,7 @@ class Table {
         this.dataArray = dataArray;
         this.lowerPriceFirst = lowerPriceFirst;
         this.generate();
-        this.createFooter();
+        this.updateFooter();
     }
 
     filter() {
@@ -24,8 +24,7 @@ class Table {
                 this.createRow(Object.values(data));
             }                     
         }
-        this.emptyFooter();
-        this.createFooter();                 
+        this.updateFooter();                 
     }
 
     toggleLowerPriceFirst () {
@@ -59,25 +58,14 @@ class Table {
         }
     }
 
-    createFooter() {        
-        const newTfoot = document.createElement("tfoot");
-        const newTfootRow = document.createElement("tr");
-
-        newTfoot.appendChild(newTfootRow);
-        document.querySelector("tbody").after(newTfoot);
-
+    updateFooter() {
         const rows = document.querySelectorAll("tbody tr");
-        let newTotalPrice = 0;
+        let totalPrice = 0;
         rows.forEach(sumPrice);
         function sumPrice(row) {
-            newTotalPrice += parseFloat(row.lastElementChild.textContent);
-        } 
-        console.log(newTotalPrice);
-        newTfootRow.textContent = `Total price: ${newTotalPrice}`;                  
-    }
-
-    emptyFooter() {
-        document.querySelector("tbody").nextElementSibling.remove();
+            totalPrice += parseFloat(row.lastElementChild.textContent);
+        }
+        document.querySelector("tbody").nextElementSibling.textContent = `Total price: ${totalPrice}`;              
     }
 }
 

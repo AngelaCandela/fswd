@@ -21,11 +21,6 @@ function paginate(array, pageNumber) {
     return array.slice((pageNumber - 1) * PAGE_SIZE, pageNumber * PAGE_SIZE);
 }
 
-function fillMyArray(array) {
-    array.forEach(post => posts.push(post));
-    createPage();    
-}
-
 function createPage() {
     div.innerHTML = "";
     const newPagePosts = paginate(posts, currentPage);
@@ -39,6 +34,11 @@ function createPage() {
         newTitle.textContent = `${element.id}: ${element.title}`;
         newParagraph.textContent = element.body;
     }
+}
+
+function fillMyArray(array) {
+    array.forEach(post => posts.push(post));
+    createPage();    
 }
 
 fetch(POSTS_URL)

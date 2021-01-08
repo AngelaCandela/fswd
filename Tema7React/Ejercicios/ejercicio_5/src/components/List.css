@@ -1,0 +1,9 @@
+.default {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clicked {
+    background-color:lightgray;
+    text-decoration-line: line-through;
+}
