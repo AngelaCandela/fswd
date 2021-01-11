@@ -3,7 +3,10 @@
     justify-content: space-between;
 }
 
-.clicked {
-    background-color:lightgray;
+.completed {
+    background-color:hsl(0, 0%, 83%);
+}
+
+.completed span {
     text-decoration-line: line-through;
 }

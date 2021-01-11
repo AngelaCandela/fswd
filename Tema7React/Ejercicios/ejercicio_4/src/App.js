@@ -8,14 +8,7 @@ function App() {
   const TODOS_URL = "https://jsonplaceholder.typicode.com/todos";
 
   const [toDos, setToDos] = useState([]);
-
-  const fillList = (data) => {
-    data = data.filter(toDo => toDo.id <= 20);
-    data.forEach(toDo => {
-       setToDos(prevToDos => [...prevToDos, toDo]);
-    })    
-  };
-
+  
   useEffect(() => {
 
     fetch(TODOS_URL)
@@ -25,8 +18,8 @@ function App() {
         
         return response.json();
     })
-    .then(data => fillList(data))
-    .catch(error => console.log(error))
+    .then(data => setToDos(data.slice(0,20)))
+    .catch(error => console.log(error));
     
     return () => {
     }
