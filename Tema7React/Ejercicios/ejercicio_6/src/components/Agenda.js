@@ -11,7 +11,7 @@ export default function Agenda() {
 
     return (
         <>
-            <h1>Agenda - Contacts List</h1>
+            <h1 className="my-4">Agenda - Contacts List</h1>
             <div className="row">
                 {
                 contacts.map((contact, index) => {

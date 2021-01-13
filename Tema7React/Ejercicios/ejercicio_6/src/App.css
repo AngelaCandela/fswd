@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.color-white {
+  color: white;
+}
+
+.color-green {
+  color: rgb(14, 224, 95);
+}

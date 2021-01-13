@@ -48,14 +48,14 @@ function App() {
       <BrowserRouter>
         <nav className="navbar bg-dark">
           <ul className="nav">
-            <li className="nav-item"><NavLink className="nav-link" to="/ej-1">Ejercicio 1</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to="/ej-2">Ejercicio 2</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to="/ej-3">Ejercicio 3</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to="/ej-4">Ejercicio 4</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-1">Ejercicio 1</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-2">Ejercicio 2</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-3">Ejercicio 3</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-4">Ejercicio 4</NavLink></li>
           </ul>
         </nav>
         
-        <Route exact path="/ej-1" component={Ejercicio_1}/>
+        <Route path="/ej-1" component={Ejercicio_1}/>
         <Route path="/ej-2" component={Ejercicio_2}/>
         <Route path="/ej-3" component={Ejercicio_3}/>
         <Route path="/ej-4" component={Ejercicio_4}/>

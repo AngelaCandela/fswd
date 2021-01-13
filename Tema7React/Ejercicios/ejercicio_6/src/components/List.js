@@ -14,7 +14,7 @@ export default function List() {
         };
     };
 
-    const deleteItem = (event, mapIndex) => {
+    const deleteItem = (mapIndex) => {
         setToDos(prevToDos => prevToDos.filter((toDo, index) =>  index !== mapIndex));
     };
 
@@ -35,7 +35,7 @@ export default function List() {
                     <li key={index} className={`default list-group-item ${toDo.completed && "completed"}`} onClick={(event) => toggleCompleted(event, index)}>
                         <span>{index+1}: {toDo.title}</span>
                         <button id="button" className="btn btn-danger"
-                            onClick={(event) => deleteItem(event, index)}>
+                            onClick={() => deleteItem(index)}>
                             Delete
                         </button>                        
                     </li>                   
