@@ -4,7 +4,7 @@
 }
 
 .completed {
-    background-color:hsl(0, 0%, 83%);
+    background-color: lightgray;
 }
 
 .completed span {

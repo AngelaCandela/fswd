@@ -9,13 +9,6 @@ function Ejercicio_4() {
 
   const [toDos, setToDos] = useState([]);
 
-  const fillList = (data) => {
-    data = data.filter(toDo => toDo.id <= 20);
-    data.forEach(toDo => {
-       setToDos(prevToDos => [...prevToDos, toDo]);
-    })    
-  };
-
   useEffect(() => {
 
     fetch(TODOS_URL)
@@ -25,7 +18,7 @@ function Ejercicio_4() {
         
         return response.json();
     })
-    .then(data => fillList(data))
+    .then(data => setToDos(data.slice(0,20)))
     .catch(error => console.log(error))
     
     return () => {
