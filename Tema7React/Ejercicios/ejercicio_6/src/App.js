@@ -17,18 +17,10 @@ function App() {
     {name: "Kate", lastName: "Doe", address: "Calle 2", province: "Madrid", postcode: "29630", phone: "611284133"},
   ]);
 
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [province, setProvince] = useState("");
-  const [postcode, setPostcode] = useState("");
-  const [phone, setPhone] = useState("");
-
   //useState and useEffect ejercicio_4
   const TODOS_URL = "https://jsonplaceholder.typicode.com/todos";
 
-  const [toDos, setToDos] = useState([]);
-  const [input, setInput] = useState("");
+  const [toDos, setToDos] = useState([]);  
 
   useEffect(() => {
 
@@ -43,24 +35,24 @@ function App() {
     .catch(error => console.log(error))
   }, [])
 
-  return (
-    <GlobalContext.Provider value={{contacts, setContacts, name, setName, lastName, setLastName, address, setAddress, province, setProvince, postcode, setPostcode, phone, setPhone, input, setInput, toDos, setToDos}}>            
-      <BrowserRouter>
-        <nav className="navbar bg-dark">
-          <ul className="nav">
-            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-1">Ejercicio 1</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-2">Ejercicio 2</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-3">Ejercicio 3</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-4">Ejercicio 4</NavLink></li>
-          </ul>
-        </nav>
-        
+  return (                
+    <BrowserRouter>
+      <nav className="navbar bg-dark">
+        <ul className="nav">
+          <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-1">Ejercicio 1</NavLink></li>
+          <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-2">Ejercicio 2</NavLink></li>
+          <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-3">Ejercicio 3</NavLink></li>
+          <li className="nav-item"><NavLink className="nav-link color-white" activeClassName="color-green" to="/ej-4">Ejercicio 4</NavLink></li>
+        </ul>
+      </nav>
+      
+      <GlobalContext.Provider value={{contacts, setContacts, toDos, setToDos}}>
         <Route path="/ej-1" component={Ejercicio_1}/>
         <Route path="/ej-2" component={Ejercicio_2}/>
         <Route path="/ej-3" component={Ejercicio_3}/>
         <Route path="/ej-4" component={Ejercicio_4}/>
-      </BrowserRouter>      
-    </GlobalContext.Provider> 
+      </GlobalContext.Provider>
+    </BrowserRouter> 
   );
 }
 

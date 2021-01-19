@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { GlobalContext } from "../App";
 
 export default function Input() {
     
-    const {setToDos} = useContext(GlobalContext);
-    const {input, setInput} = useContext(GlobalContext);
+    const { setToDos } = useContext(GlobalContext);
+
+    const [input, setInput] = useState("");    
 
     const handleInput = (event) => {
         setInput(event.target.value);

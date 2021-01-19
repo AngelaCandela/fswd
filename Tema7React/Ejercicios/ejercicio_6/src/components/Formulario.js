@@ -1,9 +1,16 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { GlobalContext } from "../App";
 
 export default function Formulario() {
 
-    const {setContacts, name, setName, lastName, setLastName, address, setAddress, province, setProvince, postcode, setPostcode, phone, setPhone} = useContext(GlobalContext);
+    const { setContacts } = useContext(GlobalContext);
+
+    const [name, setName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [address, setAddress] = useState("");
+    const [province, setProvince] = useState("");
+    const [postcode, setPostcode] = useState("");
+    const [phone, setPhone] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
