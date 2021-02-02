@@ -10,12 +10,13 @@ export default function List() {
     const [API_URL, setAPI_URL] = useState(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US`);
     const [movies, setMovies] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
+    let myArray = [];
     
     useEffect(() => {
-        getMovies(API_URL)
-    }, [API_URL])
+        getAllMovies(API_URL)
+    }, [])
 
-    function getMovies(URL) {
+    function getAllMovies(URL) {
         fetch(URL)
             .then(response => {
                 if(!response.ok)
@@ -23,11 +24,16 @@ export default function List() {
                 return response.json();
             })
             .then(json => {
-                setMovies(json.results);
+                myArray = myArray.concat(json.results);
+    
+                if(json.page < json.total_pages) {
+                    getAllMovies(`${URL}&page=${json.page+1}`);
+                }
+                setMovies(myArray);
                 setTotalPages(json.total_pages);
             })
             .catch(error => console.log(error));
-    }  
+    }
 
     return (
         <>

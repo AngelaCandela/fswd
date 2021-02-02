@@ -20,7 +20,7 @@ export default function Pagination({ setAPI_URL, totalPages }) {
     return (
         <div>
             <nav>
-                <ul class="pagination">
+                <ul className="pagination">
                     {
                     myArray.map(i => {
                         return (
