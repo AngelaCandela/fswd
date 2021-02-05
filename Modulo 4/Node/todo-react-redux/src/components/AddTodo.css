@@ -1,0 +1,11 @@
+.add-container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.add-container-form .MuiTextField-root {
+  width: 300px;
+}

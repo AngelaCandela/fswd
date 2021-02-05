@@ -24,7 +24,7 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Password is required"]
     },
-    img: {type: String},
+    img: { type: String },
     role: {
         type: String,
         default: "USER",
@@ -32,13 +32,22 @@ const userSchema = new Schema({
     },
     state: {
         type: Boolean,
-        default: true 
+        default: true
     }, // Boolean
     google: {
         type: Boolean,
         default: false
     } // Boolean
 });
+
+userSchema.methods.toJSON = function() {
+    const user = this;
+    const userObject = user.toObject();
+
+    delete userObject.password;
+
+    return userObject;
+};
 
 userSchema.plugin(uniqueValidator, { message: "{PATH} should be unique" });
 
