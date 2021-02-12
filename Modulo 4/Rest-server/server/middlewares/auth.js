@@ -11,11 +11,10 @@ const verifyToken = (req, res, next) => {
                     message: "Invalid token"
                 }
             });
+        } else {
+            next();
         }
     });
-
-    next();
-
 };
 
 module.exports = {
