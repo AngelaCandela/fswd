@@ -1,11 +1,23 @@
 import './App.css';
-import SignUp from "./components/SignUp";
+/* import { useState, useEffect, createContext } from "react"; */
+import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import SignUp from "./pages/SignUp";
+import LogIn from "./pages/LogIn";
 
 function App() {
   return (
-    <div className="App">
-      <SignUp />       
-    </div>
+    <>
+      <BrowserRouter>
+        <nav className="navbar bg-light d-flex align-items-end">
+          <ul className="nav">
+            <li className="nav-item"><NavLink className="nav-link" activeClassName="" to="/">Home</NavLink></li>
+          </ul>
+        </nav>
+      
+        <Route path="/signup" component={SignUp}/>
+        <Route path="/login" component={LogIn}/>
+      </BrowserRouter>
+    </>
   );
 }
 

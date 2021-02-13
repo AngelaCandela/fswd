@@ -1,18 +1,26 @@
 import "./SignUp.css";
-import img from "../images/pexels-engin-akyurt-1435735.jpg";
+import { useHistory } from "react-router-dom";
 
 export default function SignUp() {
+
+    let history = useHistory();
+
+    function SignInButton(e) {
+        e.preventDefault();
+        history.push("/login");
+    };
+
     return (
         <div className="d-flex">
-            <section className="auth-sidebar"></section>
-            <section className="content">                
-                <div className="main"> 
-                    <nav className="auth-nav">
-                        <p className="auth-link">
-                            Already a member?
-                            <a href="/session/new">Sign In</a>
-                        </p>
-                    </nav>                                       
+            <section className="auth-sidebar signup-sidebar"></section>
+            <section className="content">
+                <nav className="auth-nav">
+                    <p>
+                        Already a member?
+                        <a href="" onClick={SignInButton}>Sign In</a>
+                    </p>
+                </nav>                
+                <div className="main">                                                           
                     <div className="auth-content">
                         <h2>Sign up</h2>                       
                         <form action="#" className="auth-form">
